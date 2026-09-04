@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKYBOOK – احجز رحلتك</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loader">
+    <div class="loader-sky">
+      <div class="loader-cloud loader-cloud-1"></div>
+      <div class="loader-cloud loader-cloud-2"></div>
+      <div class="loader-cloud loader-cloud-3"></div>
+    </div>
+    <div class="loader-inner">
+      <div class="loader-runway">
+        <div class="loader-plane-wrap">
+          <svg class="loader-plane-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M70 30L50 35L35 10H28L38 36L10 42L5 38L2 40L8 48L20 50L22 58L26 58L28 52L55 46L48 70H55L72 48L75 47C78 46 80 43 80 40C80 35 76 29 70 30Z" fill="white"/>
+          </svg>
+        </div>
+        <div class="loader-trail"></div>
+      </div>
+      <div class="loader-logo-group">
+        <div class="loader-brand">
+          <span class="loader-brand-sky">SKY</span><span class="loader-brand-book">BOOK</span>
+        </div>
+        <div class="loader-tagline">✦ السفر الفاخر بين يديك ✦</div>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <div class="loader-percent" id="loaderPercent">0%</div>
+      </div>
+      <div class="loader-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">✈</span>
+        <span class="logo-text">SKYBOOK</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero">الرئيسية</a></li>
+        <li><a href="#destinations">الوجهات</a></li>
+        <li><a href="#deals">العروض</a></li>
+        <li><a href="#why-us">لماذا نحن</a></li>
+        <li><a href="#reviews">آراء العملاء</a></li>
+        <li><a href="#faq">الأسئلة</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-login">تسجيل الدخول</a>
+        <a href="#" class="btn-signup">إنشاء حساب</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#hero">الرئيسية</a>
+      <a href="#destinations">الوجهات</a>
+      <a href="#deals">العروض</a>
+      <a href="#why-us">لماذا نحن</a>
+      <a href="#reviews">آراء العملاء</a>
+      <a href="#faq">الأسئلة</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <div class="hero-bg">
+      <img
+        src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80"
+        alt="مطار"
+        class="hero-img"
+        id="heroImg"
+      />
+      <!-- Animated cinematic overlay layers -->
+      <div class="hero-overlay"></div>
+      <div class="hero-vignette"></div>
+      <div class="hero-scanlines"></div>
+    </div>
+
+    <!-- Animated airport horizon line -->
+    <div class="hero-horizon">
+      <div class="horizon-line"></div>
+      <div class="horizon-glow"></div>
+    </div>
+
+    <!-- Floating SVG airplane -->
+    <div class="float-plane-wrap" id="floatPlane">
+      <svg class="float-plane-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M105 45L78 52L57 15H47L62 54L18 63L10 57L5 60L14 72L32 76L35 87L41 87L45 78L85 69L74 105H84L109 72L113 70C117 69 120 65 120 60C120 53 114 44 105 45Z" fill="white" fill-opacity="0.95"/>
+        <path d="M57 15L47 15L62 54L68 52Z" fill="rgba(255,255,255,0.5)"/>
+      </svg>
+      <div class="float-plane-trail"></div>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Animated stars/sparkles -->
+    <div class="hero-sparkles" id="heroSparkles"></div>
+
+    <div class="hero-content fade-in-up">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        ✦ رحلات فاخرة حول العالم ✦
+      </div>
+      <h1 class="hero-title">
+        احجز رحلتك القادمة<br />
+        <span class="gradient-text">بكل سهولة وفخامة</span>
+      </h1>
+      <p class="hero-subtitle">
+        أفضل الأسعار إلى مئات الوجهات حول العالم.
+        اكتشف عروضاً حصرية لا تُفوَّت.
+      </p>
+
+      <!-- PREMIUM SEARCH BOX -->
+      <div class="search-box glass" id="searchBox">
+        <!-- Glassmorphism shimmer edge -->
+        <div class="search-glass-edge"></div>
+
+        <div class="trip-tabs">
+          <button class="trip-tab active" data-tab="roundtrip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12H20M20 12L14 6M20 12L14 18M20 7H4M4 7L10 1M4 17H20M20 17L14 23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            ذهاب وعودة
+          </button>
+          <button class="trip-tab" data-tab="oneway">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            ذهاب فقط
+          </button>
+          <button class="trip-tab" data-tab="multicity">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 6H21M3 12H17M3 18H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            متعدد المدن
+          </button>
+        </div>
+
+        <div class="search-fields">
+          <div class="search-field sf-from">
+            <label>
+              <svg class="sf-icon" viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="1.8"/><path d="M12 22V12M3.27 6.96L12 12.01l8.73-5.05" stroke="currentColor" stroke-width="1.8"/></svg>
+              من
+            </label>
+            <div class="sf-input-wrap">
+              <input type="text" class="sf-input" placeholder="المدينة أو المطار" value="القاهرة" id="fromInput" autocomplete="off" />
+              <span class="sf-code" id="fromCode">CAI</span>
+            </div>
+            <div class="sf-suggestion-box" id="fromSuggestions"></div>
+          </div>
+
+          <button class="swap-btn premium-swap" id="swapBtn" title="تبديل الوجهات">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div class="search-field sf-to">
+            <label>
+              <svg class="sf-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+              إلى
+            </label>
+            <div class="sf-input-wrap">
+              <input type="text" class="sf-input" placeholder="المدينة أو المطار" id="toInput" autocomplete="off" />
+              <span class="sf-code" id="toCode">—</span>
+            </div>
+            <div class="sf-suggestion-box" id="toSuggestions"></div>
+          </div>
+
+          <div class="search-field sf-date">
+            <label>
+              <svg class="sf-icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              تاريخ الذهاب
+            </label>
+            <div class="sf-input-wrap">
+              <input type="date" id="departDate" class="sf-input" />
+            </div>
+          </div>
+
+          <div class="search-field sf-date" id="returnField">
+            <label>
+              <svg class="sf-icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 14l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              تاريخ العودة
+            </label>
+            <div class="sf-input-wrap">
+              <input type="date" id="returnDate" class="sf-input" />
+            </div>
+          </div>
+
+          <div class="search-field passengers-field sf-pass">
+            <label>
+              <svg class="sf-icon" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="8" r="2" stroke="currentColor" stroke-width="1.8"/><path d="M21 20c0-2.761-1.791-5-4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              المسافرون
+            </label>
+            <div class="passengers-input sf-input" id="passengersInput">
+              <span id="passCount">1 مسافر · الاقتصادية</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="chevron-svg"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="passengers-dropdown" id="passDropdown">
+              <div class="pass-row">
+                <div class="pass-info">
+                  <strong>البالغون</strong>
+                  <small>12+ سنة</small>
+                </div>
+                <div class="counter">
+                  <button class="cnt-btn" data-type="adults" data-action="minus">−</button>
+                  <span id="adultsCount">1</span>
+                  <button class="cnt-btn" data-type="adults" data-action="plus">+</button>
+                </div>
+              </div>
+              <div class="pass-row">
+                <div class="pass-info">
+                  <strong>الأطفال</strong>
+                  <small>2–11 سنة</small>
+                </div>
+                <div class="counter">
+                  <button class="cnt-btn" data-type="children" data-action="minus">−</button>
+                  <span id="childrenCount">0</span>
+                  <button class="cnt-btn" data-type="children" data-action="plus">+</button>
+                </div>
+              </div>
+              <div class="pass-row">
+                <div class="pass-info">
+                  <strong>الرضع</strong>
+                  <small>أقل من سنتين</small>
+                </div>
+                <div class="counter">
+                  <button class="cnt-btn" data-type="infants" data-action="minus">−</button>
+                  <span id="infantsCount">0</span>
+                  <button class="cnt-btn" data-type="infants" data-action="plus">+</button>
+                </div>
+              </div>
+              <div class="class-select">
+                <label>درجة السفر</label>
+                <div class="cabin-options">
+                  <button class="cabin-opt active" data-cabin="الاقتصادية">اقتصادية</button>
+                  <button class="cabin-opt" data-cabin="رجال الأعمال">أعمال</button>
+                  <button class="cabin-opt" data-cabin="الأولى">الأولى ✦</button>
+                </div>
+              </div>
+              <button class="pass-done" id="passDone">✓ تأكيد الاختيار</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="search-btn" id="searchBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="white" stroke-width="2.2"/><path d="M16.5 16.5L21 21" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span>ابحث عن أفضل الرحلات</span>
+          <div class="search-btn-shimmer"></div>
+        </button>
+
+        <!-- Quick search tags -->
+        <div class="quick-searches">
+          <span class="qs-label">بحث سريع:</span>
+          <button class="qs-tag" data-to="دبي" data-code="DXB">🇦🇪 دبي</button>
+          <button class="qs-tag" data-to="إسطنبول" data-code="IST">🇹🇷 إسطنبول</button>
+          <button class="qs-tag" data-to="باريس" data-code="CDG">🇫🇷 باريس</button>
+          <button class="qs-tag" data-to="لندن" data-code="LHR">🇬🇧 لندن</button>
+          <button class="qs-tag" data-to="بانكوك" data-code="BKK">🇹🇭 بانكوك</button>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>500+</strong>
+          <span>وجهة حول العالم</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>2M+</strong>
+          <span>مسافر سعيد</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>150+</strong>
+          <span>شركة طيران</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll-hint">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>تمرير للأسفل</span>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR DESTINATIONS ===== -->
+  <section id="destinations" class="section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-badge">✈ اكتشف العالم</span>
+        <h2 class="section-title">الوجهات الأكثر <span class="accent">شعبية</span></h2>
+        <p class="section-sub">اكتشف أجمل المدن والوجهات السياحية حول العالم بأفضل الأسعار</p>
+      </div>
+
+      <div class="destinations-grid">
+
+        <div class="dest-card large fade-in-up" style="--delay:.1s">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" alt="دبي" loading="lazy" />
+          <div class="dest-tag">الأكثر حجزاً</div>
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-flag-row">
+                <div class="dest-flag">🇦🇪</div>
+                <div class="dest-rating">★ 4.9 <span>(2.1k)</span></div>
+              </div>
+              <h3>دبي</h3>
+              <p>الإمارات العربية المتحدة</p>
+              <div class="dest-meta-row">
+                <span class="dest-meta-item">✈ 3س 40د</span>
+                <span class="dest-meta-item">🌡 38°م</span>
+              </div>
+              <div class="dest-price">
+                <span>من</span>
+                <strong>799 ر.س</strong>
+              </div>
+              <a href="#" class="dest-btn">احجز الآن ←</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dest-card fade-in-up" style="--delay:.2s">
+          <img src="https://images.unsplash.com/photo-1539768942893-daf53e448371?w=600&q=80" alt="القاهرة" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-flag-row">
+                <div class="dest-flag">🇪🇬</div>
+                <div class="dest-rating">★ 4.7 <span>(1.4k)</span></div>
+              </div>
+              <h3>القاهرة</h3>
+              <p>مصر</p>
+              <div class="dest-meta-row">
+                <span class="dest-meta-item">✈ 1س 20د</span>
+                <span class="dest-meta-item">🌡 32°م</span>
+              </div>
+              <div class="dest-price">
+                <span>من</span>
+                <strong>350 ر.س</strong>
+              </div>
+              <a href="#" class="dest-btn">احجز الآن ←</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dest-card fade-in-up" style="--delay:.3s">
+          <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=600&q=80" alt="جدة" loading="lazy" />
+          <div class="dest-tag dest-tag-hot">عرض خاص</div>
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-flag-row">
+                <div class="dest-flag">🇸🇦</div>
+                <div class="dest-rating">★ 4.8 <span>(980)</span></div>
+              </div>
+              <h3>جدة</h3>
+              <p>المملكة العربية السعودية</p>
+              <div class="dest-meta-row">
+                <span class="dest-meta-item">✈ 1س 55د</span>
+                <span class="dest-meta-item">🌡 35°م</span>
+              </div>
+              <div class="dest-price">
+                <span>من</span>
+                <strong>450 ر.س</strong>
+              </div>
+              <a href="#" class="dest-btn">احجز الآن ←</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dest-card fade-in-up" style="--delay:.4s">
+          <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80" alt="إسطنبول" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-flag-row">
+                <div class="dest-flag">🇹🇷</div>
+                <div class="dest-rating">★ 4.9 <span>(3.2k)</span></div>
+              </div>
+              <h3>إسطنبول</h3>
+              <p>تركيا</p>
+              <div class="dest-meta-row">
+                <span class="dest-meta-item">✈ 4س 10د</span>
+                <span class="dest-meta-item">🌡 22°م</span>
+              </div>
+              <div class="dest-price">
+                <span>من</span>
+                <strong>920 ر.س</strong>
+              </div>
+              <a href="#" class="dest-btn">احجز الآن ←</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dest-card fade-in-up" style="--delay:.5s">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80" alt="باريس" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-flag-row">
+                <div class="dest-flag">🇫🇷</div>
+                <div class="dest-rating">★ 4.9 <span>(5.1k)</span></div>
+              </div>
+              <h3>باريس</h3>
+              <p>فرنسا</p>
+              <div class="dest-meta-row">
+                <span class="dest-meta-item">✈ 6س 30د</span>
+                <span class="dest-meta-item">🌡 18°م</span>
+              </div>
+              <div class="dest-price">
+                <span>من</span>
+                <strong>1,450 ر.س</strong>
+              </div>
+              <a href="#" class="dest-btn">احجز الآن ←</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="dest-card fade-in-up" style="--delay:.6s">
+          <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" alt="لندن" loading="lazy" />
+          <div class="dest-overlay">
+            <div class="dest-info">
+              <div class="dest-flag-row">
+                <div class="dest-flag">🇬🇧</div>
+                <div class="dest-rating">★ 4.8 <span>(4.3k)</span></div>
+              </div>
+              <h3>لندن</h3>
+              <p>المملكة المتحدة</p>
+              <div class="dest-meta-row">
+                <span class="dest-meta-item">✈ 7س 00د</span>
+                <span class="dest-meta-item">🌡 14°م</span>
+              </div>
+              <div class="dest-price">
+                <span>من</span>
+                <strong>1,650 ر.س</strong>
+              </div>
+              <a href="#" class="dest-btn">احجز الآن ←</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BEST DEALS ===== -->
+  <section id="deals" class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-badge">🔥 عروض حصرية</span>
+        <h2 class="section-title">أفضل <span class="accent">عروض الرحلات</span></h2>
+        <p class="section-sub">عروض لفترة محدودة – لا تفوّت هذه الفرصة!</p>
+      </div>
+
+      <div class="deals-grid">
+
+        <div class="deal-card fade-in-up" style="--delay:.1s">
+          <div class="deal-badge">خصم 30%</div>
+          <div class="deal-header">
+            <div class="airline-logo">
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=80&q=80" alt="طيران" />
+            </div>
+            <div class="airline-info">
+              <strong>الخطوط السعودية</strong>
+              <span>SV 204</span>
+            </div>
+          </div>
+          <div class="deal-route">
+            <div class="route-city">
+              <span class="route-code">RUH</span>
+              <span class="route-name">الرياض</span>
+            </div>
+            <div class="route-line">
+              <span class="route-plane">✈</span>
+              <div class="route-track"></div>
+            </div>
+            <div class="route-city">
+              <span class="route-code">DXB</span>
+              <span class="route-name">دبي</span>
+            </div>
+          </div>
+          <div class="deal-details">
+            <div class="deal-meta">
+              <span>⏱ 1س 40د</span>
+              <span>💼 حقيبة مجانية</span>
+            </div>
+          </div>
+          <div class="deal-footer">
+            <div class="deal-price">
+              <del>1,200 ر.س</del>
+              <strong>799 ر.س</strong>
+            </div>
+            <button class="book-btn">احجز الآن</button>
+          </div>
+        </div>
+
+        <div class="deal-card fade-in-up" style="--delay:.2s">
+          <div class="deal-badge hot">أقل سعر</div>
+          <div class="deal-header">
+            <div class="airline-logo">
+              <img src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?w=80&q=80" alt="طيران" />
+            </div>
+            <div class="airline-info">
+              <strong>flydubai</strong>
+              <span>FZ 301</span>
+            </div>
+          </div>
+          <div class="deal-route">
+            <div class="route-city">
+              <span class="route-code">DXB</span>
+              <span class="route-name">دبي</span>
+            </div>
+            <div class="route-line">
+              <span class="route-plane">✈</span>
+              <div class="route-track"></div>
+            </div>
+            <div class="route-city">
+              <span class="route-code">CAI</span>
+              <span class="route-name">القاهرة</span>
+            </div>
+          </div>
+          <div class="deal-details">
+            <div class="deal-meta">
+              <span>⏱ 3س 15د</span>
+              <span>🍽 وجبة مشمولة</span>
+            </div>
+          </div>
+          <div class="deal-footer">
+            <div class="deal-price">
+              <del>950 ر.س</del>
+              <strong>550 ر.س</strong>
+            </div>
+            <button class="book-btn">احجز الآن</button>
+          </div>
+        </div>
+
+        <div class="deal-card fade-in-up" style="--delay:.3s">
+          <div class="deal-badge">عرض خاص</div>
+          <div class="deal-header">
+            <div class="airline-logo">
+              <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=80&q=80" alt="طيران" />
+            </div>
+            <div class="airline-info">
+              <strong>Turkish Airlines</strong>
+              <span>TK 770</span>
+            </div>
+          </div>
+          <div class="deal-route">
+            <div class="route-city">
+              <span class="route-code">IST</span>
+              <span class="route-name">إسطنبول</span>
+            </div>
+            <div class="route-line">
+              <span class="route-plane">✈</span>
+              <div class="route-track"></div>
+            </div>
+            <div class="route-city">
+              <span class="route-code">CDG</span>
+              <span class="route-name">باريس</span>
+            </div>
+          </div>
+          <div class="deal-details">
+            <div class="deal-meta">
+              <span>⏱ 3س 30د</span>
+              <span>💺 درجة أعمال</span>
+            </div>
+          </div>
+          <div class="deal-footer">
+            <div class="deal-price">
+              <del>3,200 ر.س</del>
+              <strong>1,890 ر.س</strong>
+            </div>
+            <button class="book-btn">احجز الآن</button>
+          </div>
+        </div>
+
+        <div class="deal-card fade-in-up" style="--delay:.4s">
+          <div class="deal-badge">محدود</div>
+          <div class="deal-header">
+            <div class="airline-logo">
+              <img src="https://images.unsplash.com/photo-1567198179868-a6777cd9bef5?w=80&q=80" alt="طيران" />
+            </div>
+            <div class="airline-info">
+              <strong>Emirates</strong>
+              <span>EK 123</span>
+            </div>
+          </div>
+          <div class="deal-route">
+            <div class="route-city">
+              <span class="route-code">DXB</span>
+              <span class="route-name">دبي</span>
+            </div>
+            <div class="route-line">
+              <span class="route-plane">✈</span>
+              <div class="route-track"></div>
+            </div>
+            <div class="route-city">
+              <span class="route-code">LHR</span>
+              <span class="route-name">لندن</span>
+            </div>
+          </div>
+          <div class="deal-details">
+            <div class="deal-meta">
+              <span>⏱ 7س 00د</span>
+              <span>🎬 ترفيه على متن</span>
+            </div>
+          </div>
+          <div class="deal-footer">
+            <div class="deal-price">
+              <del>4,500 ر.س</del>
+              <strong>2,999 ر.س</strong>
+            </div>
+            <button class="book-btn">احجز الآن</button>
+          </div>
+        </div>
+
+        <div class="deal-card fade-in-up" style="--delay:.5s">
+          <div class="deal-badge">خصم 25%</div>
+          <div class="deal-header">
+            <div class="airline-logo">
+              <img src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?w=80&q=80" alt="طيران" />
+            </div>
+            <div class="airline-info">
+              <strong>Air Arabia</strong>
+              <span>G9 540</span>
+            </div>
+          </div>
+          <div class="deal-route">
+            <div class="route-city">
+              <span class="route-code">SHJ</span>
+              <span class="route-name">الشارقة</span>
+            </div>
+            <div class="route-line">
+              <span class="route-plane">✈</span>
+              <div class="route-track"></div>
+            </div>
+            <div class="route-city">
+              <span class="route-code">JED</span>
+              <span class="route-name">جدة</span>
+            </div>
+          </div>
+          <div class="deal-details">
+            <div class="deal-meta">
+              <span>⏱ 1س 55د</span>
+              <span>💼 حقيبة مجانية</span>
+            </div>
+          </div>
+          <div class="deal-footer">
+            <div class="deal-price">
+              <del>600 ر.س</del>
+              <strong>399 ر.س</strong>
+            </div>
+            <button class="book-btn">احجز الآن</button>
+          </div>
+        </div>
+
+        <div class="deal-card fade-in-up" style="--delay:.6s">
+          <div class="deal-badge hot">الأفضل مبيعاً</div>
+          <div class="deal-header">
+            <div class="airline-logo">
+              <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=80&q=80" alt="طيران" />
+            </div>
+            <div class="airline-info">
+              <strong>Qatar Airways</strong>
+              <span>QR 811</span>
+            </div>
+          </div>
+          <div class="deal-route">
+            <div class="route-city">
+              <span class="route-code">DOH</span>
+              <span class="route-name">الدوحة</span>
+            </div>
+            <div class="route-line">
+              <span class="route-plane">✈</span>
+              <div class="route-track"></div>
+            </div>
+            <div class="route-city">
+              <span class="route-code">IST</span>
+              <span class="route-name">إسطنبول</span>
+            </div>
+          </div>
+          <div class="deal-details">
+            <div class="deal-meta">
+              <span>⏱ 4س 15د</span>
+              <span>🌐 واي فاي مجاني</span>
+            </div>
+          </div>
+          <div class="deal-footer">
+            <div class="deal-price">
+              <del>2,100 ر.س</del>
+              <strong>1,350 ر.س</strong>
+            </div>
+            <button class="book-btn">احجز الآن</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section id="why-us" class="section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-badge">💎 تميّزنا</span>
+        <h2 class="section-title">لماذا تختار <span class="accent">SKYBOOK</span>؟</h2>
+        <p class="section-sub">نقدّم لك تجربة حجز استثنائية بميزات لا تجدها في مكان آخر</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card fade-in-up" style="--delay:.1s">
+          <div class="why-icon-wrap">
+            <div class="why-icon">💰</div>
+          </div>
+          <h3>أفضل الأسعار</h3>
+          <p>نضمن لك أقل الأسعار مقارنةً بجميع المنصات. إذا وجدت سعراً أفضل نعوّضك عن الفرق.</p>
+          <div class="why-line"></div>
+        </div>
+
+        <div class="why-card fade-in-up" style="--delay:.2s">
+          <div class="why-icon-wrap">
+            <div class="why-icon">⚡</div>
+          </div>
+          <h3>حجز سريع</h3>
+          <p>أتمّ حجزك في أقل من دقيقتين. واجهة بسيطة وخطوات واضحة توصلك إلى تذكرتك بسرعة قياسية.</p>
+          <div class="why-line"></div>
+        </div>
+
+        <div class="why-card fade-in-up" style="--delay:.3s">
+          <div class="why-icon-wrap">
+            <div class="why-icon">🎧</div>
+          </div>
+          <h3>دعم 24/7</h3>
+          <p>فريق دعم متخصص على مدار الساعة طوال أيام الأسبوع. نحن هنا دائماً لمساعدتك في أي وقت.</p>
+          <div class="why-line"></div>
+        </div>
+
+        <div class="why-card fade-in-up" style="--delay:.4s">
+          <div class="why-icon-wrap">
+            <div class="why-icon">🔒</div>
+          </div>
+          <h3>دفع آمن</h3>
+          <p>معاملاتك محمية بأحدث تقنيات التشفير SSL. نقبل جميع بطاقات الدفع وخيارات الدفع الإلكتروني.</p>
+          <div class="why-line"></div>
+        </div>
+
+        <div class="why-card fade-in-up" style="--delay:.5s">
+          <div class="why-icon-wrap">
+            <div class="why-icon">🏆</div>
+          </div>
+          <h3>برنامج المكافآت</h3>
+          <p>اجمع نقاط مع كل حجز واستبدلها بتذاكر مجانية أو ترقيات مجانية لدرجة رجال الأعمال.</p>
+          <div class="why-line"></div>
+        </div>
+
+        <div class="why-card fade-in-up" style="--delay:.6s">
+          <div class="why-icon-wrap">
+            <div class="why-icon">📱</div>
+          </div>
+          <h3>تطبيق ذكي</h3>
+          <p>حمّل تطبيقنا وتابع رحلاتك، واستقبل التنبيهات الفورية، وأدر حجوزاتك من أي مكان في العالم.</p>
+          <div class="why-line"></div>
+        </div>
+      </div>
+
+      <div class="trust-bar fade-in-up">
+        <div class="trust-item">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=60&h=60&q=80&fit=crop" alt="ضمان" />
+          <span>ضمان أفضل سعر</span>
+        </div>
+        <div class="trust-item">
+          <img src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?w=60&h=60&q=80&fit=crop" alt="شريك" />
+          <span>150+ شركة طيران</span>
+        </div>
+        <div class="trust-item">
+          <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=60&h=60&q=80&fit=crop" alt="مسافرون" />
+          <span>2 مليون+ عميل</span>
+        </div>
+        <div class="trust-item">
+          <img src="https://images.unsplash.com/photo-1567198179868-a6777cd9bef5?w=60&h=60&q=80&fit=crop" alt="جوائز" />
+          <span>جوائز دولية</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section id="reviews" class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-badge">⭐ آراء العملاء</span>
+        <h2 class="section-title">ماذا يقول <span class="accent">مسافرونا</span>؟</h2>
+        <p class="section-sub">آلاف العملاء السعداء يثقون في SKYBOOK لتنظيم رحلاتهم</p>
+      </div>
+
+      <div class="reviews-slider-wrap fade-in-up">
+        <div class="reviews-slider" id="reviewsSlider">
+
+          <div class="review-card">
+            <div class="review-quote">❝</div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">تجربة رائعة من البداية للنهاية! الموقع سهل الاستخدام والأسعار منافسة جداً. سافرت مع عائلتي إلى دبي وكان كل شيء مثالياً. أنصح به بشدة.</p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&q=80&fit=crop&crop=face" alt="أحمد" />
+              <div>
+                <strong>أحمد المنصوري</strong>
+                <span>دبي، الإمارات</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-quote">❝</div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">وجدت تذكرة إلى لندن بسعر لم أتوقعه! فريق الدعم كان متجاوباً للغاية وساعدني في تعديل موعد الرحلة دون أي مشاكل. شكراً SKYBOOK!</p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&q=80&fit=crop&crop=face" alt="سارة" />
+              <div>
+                <strong>سارة الزهراني</strong>
+                <span>الرياض، السعودية</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-quote">❝</div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">استخدمت SKYBOOK لأول مرة للسفر إلى إسطنبول وأنا مندهش من مدى سهولة العملية. التذكرة وصلت فورياً على بريدي والحجز كان مضموناً 100%.</p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&q=80&fit=crop&crop=face" alt="خالد" />
+              <div>
+                <strong>خالد إبراهيم</strong>
+                <span>القاهرة، مصر</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-quote">❝</div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">أفضل موقع حجز رحلات في المنطقة. الواجهة عربية واضحة والدفع آمن ومريح. حجزت أكثر من 10 رحلات معهم ولم أواجه أي مشكلة قط.</p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&q=80&fit=crop&crop=face" alt="ليلى" />
+              <div>
+                <strong>ليلى النجار</strong>
+                <span>عمّان، الأردن</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-quote">❝</div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">برنامج المكافآت رائع! جمعت نقاطاً من عدة رحلات وحصلت على ترقية مجانية لدرجة رجال الأعمال. لن أستخدم موقعاً آخر بعد الآن.</p>
+            <div class="review-author">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&q=80&fit=crop&crop=face" alt="محمد" />
+              <div>
+                <strong>محمد العمري</strong>
+                <span>جدة، السعودية</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slider-controls">
+          <button class="slider-btn" id="prevBtn">❮</button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn" id="nextBtn">❯</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-badge">❓ الأسئلة الشائعة</span>
+        <h2 class="section-title">كيف يمكننا <span class="accent">مساعدتك</span>؟</h2>
+        <p class="section-sub">إجابات على الأسئلة الأكثر شيوعاً من عملائنا</p>
+      </div>
+
+      <div class="faq-container fade-in-up">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>كيف أحجز تذكرة طيران عبر SKYBOOK؟</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>الحجز بسيط جداً! اختر وجهتك وتواريخ السفر وعدد المسافرين، ثم قارن الرحلات المتاحة واختر الأنسب لك، وأتمّ عملية الدفع الآمن. ستصلك تذكرتك فوراً على بريدك الإلكتروني.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>هل يمكنني إلغاء أو تعديل حجزي؟</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>نعم، يمكنك إدارة حجوزاتك من خلال حسابك على SKYBOOK. سياسة الإلغاء والتعديل تختلف بحسب سياسة شركة الطيران. تواصل مع فريق الدعم لمساعدتك في أي وقت.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>ما وسائل الدفع المقبولة؟</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>نقبل جميع بطاقات الائتمان والخصم (Visa, Mastercard, Amex)، بالإضافة إلى Apple Pay وGoogle Pay وSTC Pay ومدى وتحويلات بنكية مباشرة.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>كيف يعمل برنامج نقاط المكافآت؟</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>مع كل حجز تجمع نقاطاً تتراكم في حسابك. يمكنك استبدالها لاحقاً بخصومات على رحلاتك القادمة أو بترقيات مجانية. كلما سافرت أكثر، كلما ربحت أكثر!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>هل SKYBOOK يعمل على الجوال؟</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>بالتأكيد! الموقع يعمل بشكل مثالي على جميع الأجهزة. كما يتوفر تطبيقنا على متاجر App Store وGoogle Play يتيح لك تتبع الرحلات واستقبال الإشعارات الفورية.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>هل الأسعار المعروضة نهائية ولا توجد رسوم خفية؟</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>نعم، نحرص على الشفافية التامة. السعر المعروض يشمل جميع الضرائب والرسوم. لن تُفاجأ بأي رسوم إضافية عند إتمام الحجز. ما تراه هو ما تدفعه.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <span class="section-badge">📬 تواصل معنا</span>
+        <h2 class="section-title">نحن هنا <span class="accent">لمساعدتك</span></h2>
+        <p class="section-sub">فريقنا جاهز للرد على استفساراتك على مدار الساعة</p>
+      </div>
+
+      <div class="contact-grid fade-in-up">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h4>اتصل بنا</h4>
+            <p>+20 11 000 0000</p>
+            <span>متاح 24/7</span>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h4>البريد الإلكتروني</h4>
+            <p>support@skybook.com</p>
+            <span>رد خلال ساعة</span>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h4>الدردشة المباشرة</h4>
+            <p>دردش مع أحد خبرائنا</p>
+            <span>متوسط الانتظار: 2 دقيقة</span>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <h4>مكتبنا</h4>
+            <p> القاهره-مصر</p>
+            <span>   حسن محمد-هرمSKYBOOK</span>
+          </div>
+        </div>
+
+        <form class="contact-form glass" id="contactForm">
+          <h3>أرسل رسالة</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>الاسم الكامل</label>
+              <input type="text" placeholder="أدخل اسمك" required />
+            </div>
+            <div class="form-group">
+              <label>البريد الإلكتروني</label>
+              <input type="email" placeholder="email@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>رقم الهاتف</label>
+            <input type="tel" placeholder="+966 5X XXX XXXX" />
+          </div>
+          <div class="form-group">
+            <label>الموضوع</label>
+            <select>
+              <option>استفسار عن حجز</option>
+              <option>إلغاء أو تعديل</option>
+              <option>شكوى</option>
+              <option>اقتراح</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>رسالتك</label>
+            <textarea rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            <span>إرسال الرسالة</span>
+            <span>✈</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="nav-logo footer-logo">
+              <span class="logo-icon">✈</span>
+              <span class="logo-text">SKYBOOK</span>
+            </a>
+            <p>منصتك المتكاملة لحجز رحلات الطيران بأفضل الأسعار إلى مئات الوجهات حول العالم.</p>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+              <a href="#" class="social-link" aria-label="Instagram">📸</a>
+              <a href="#" class="social-link" aria-label="Facebook">f</a>
+              <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>الشركة</h4>
+            <ul>
+              <li><a href="#">من نحن</a></li>
+              <li><a href="#">فريق العمل</a></li>
+              <li><a href="#">الوظائف</a></li>
+              <li><a href="#">أخبارنا</a></li>
+              <li><a href="#">الشراكات</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>الخدمات</h4>
+            <ul>
+              <li><a href="#">حجز الطيران</a></li>
+              <li><a href="#">حجز الفنادق</a></li>
+              <li><a href="#">تأجير السيارات</a></li>
+              <li><a href="#">باقات السفر</a></li>
+              <li><a href="#">التأمين السياحي</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>الدعم</h4>
+            <ul>
+              <li><a href="#">مركز المساعدة</a></li>
+              <li><a href="#">تتبع الحجز</a></li>
+              <li><a href="#">الإلغاء والاسترداد</a></li>
+              <li><a href="#">سياسة الخصوصية</a></li>
+              <li><a href="#">الشروط والأحكام</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>تطبيقنا</h4>
+            <p class="app-text">حمّل التطبيق وابدأ رحلتك</p>
+            <a href="#" class="app-btn">
+              <span>🍎</span>
+              <div>
+                <small>متوفر على</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+            <a href="#" class="app-btn">
+              <span>▶</span>
+              <div>
+                <small>متوفر على</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 SKYBOOK. جميع الحقوق محفوظة.</p>
+        <div class="payment-icons">
+          <span class="pay-icon">VISA</span>
+          <span class="pay-icon">MC</span>
+          <span class="pay-icon">AMEX</span>
+          <span class="pay-icon">مدى</span>
+          <span class="pay-icon">STC</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP ===== -->
+  <button class="scroll-top" id="scrollTop" title="عودة للأعلى">↑</button>
+
+  <!-- ===== NOTIFICATION TOAST ===== -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
