@@ -223,7 +223,7 @@ SKYBOOK/index.html
 
 ## 👨‍💻 المطور
 
-**Awab W. Bashry**
+**Awab Bashary | AwabBuilds**
 
 Frontend Developer & Software Developer
 
@@ -469,7 +469,7 @@ SKYBOOK was created as a professional travel and flight-booking frontend experie
 
 ## 👨‍💻 Developer
 
-**Awab W. Bashry**
+**Awab Bashary | AwabBuilds**
 
 Frontend Developer & Software Developer
 
